@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const authenticated = localStorage.getItem("authenticated");
+      if (authenticated) window.location.href = ".";
+    </script>
+    <title>Aplikasi Kasir - Login</title>
+  </head>
+  <body>
+    <form
+      id="formLogin"
+      method="post"
+      class="max-w-sm mx-auto card bg-base-100 drop-shadow-2xl mt-24 pt-14 pb-20"
+    >
+      <h1 class="text-2xl text-center font-medium mb-5">Login</h1>
+      <div class="form-control w-full max-w-xs mx-auto">
+        <label class="label">
+          <span class="label-text">Input your email</span>
+        </label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          class="input input-bordered input-primary input-md w-full max-w-xs"
+        />
+      </div>
+      <div class="form-control w-full max-w-xs mx-auto mb-5">
+        <label class="label">
+          <span class="label-text">Input your password</span>
+        </label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          class="input input-bordered input-primary input-md w-full max-w-xs"
+        />
+      </div>
+      <div
+        id="alert"
+        class="alert alert-error w-10/12 mx-auto"
+        style="display: none"
+      >
+        <span>Error! Login failed.</span>
+      </div>
+      <div class="form-control w-full max-w-xs mx-auto mt-12">
+        <input
+          type="submit"
+          value="Submit"
+          class="btn btn-active btn-wide btn-primary mx-auto"
+        />
+      </div>
+    </form>
+
+    <script type="module" src="./utils/callApi.js"></script>
+    <script type="module" src="./utils/login.js"></script>
+  </body>
+</html>
