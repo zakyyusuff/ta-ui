@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      const authenticated = localStorage.getItem("authenticated");
+      if (!authenticated) window.location.href = "./login.html";
+    </script>
+    <title>Aplikasi Kasir</title>
+  </head>
+  <body>
+    <div class="drawer">
+      <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <!-- Navbar -->
+        <div class="w-full navbar bg-base-300">
+          <div class="flex-none sm:hidden">
+            <label for="my-drawer-3" class="btn btn-square btn-ghost">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block w-6 h-6 stroke-current"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </label>
+          </div>
+          <div class="flex-1 px-2 mx-2">
+            <a href="." class="stat-value text-xl">Aplikasi Kasir</a>
+          </div>
+          <div class="flex-none hidden sm:block">
+            <ul class="menu menu-horizontal">
+              <!-- Navbar menu content here -->
+              <li><a href="./menu.html">Menu</a></li>
+              <li><a href="./table.html">Table</a></li>
+              <li><a href="./order.html">Order</a></li>
+              <li><a href="./invoice.html">Invoice</a></li>
+              <li>
+                <button
+                  id="btnLogoutNav"
+                  type="submit"
+                  class="btn btn-sm btn-active btn-primary ms-5"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Page content here -->
+        <div class="flex flex-col gap-10 mx-auto mt-20 md:mt-28 mb-20">
+          <div class="flex flex-col md:flex-row gap-10">
+            <div class="stats shadow">
+              <a href="./menu.html">
+                <div class="stat w-64">
+                  <div class="stat-title">Manage</div>
+                  <div class="stat-value">Menu</div>
+                  <div class="stat-desc mt-1">
+                    <span class="flex">
+                      More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-right ms-2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="stats shadow">
+              <a href="./table.html">
+                <div class="stat w-64">
+                  <div class="stat-title">Manage</div>
+                  <div class="stat-value">Table</div>
+                  <div class="stat-desc mt-1">
+                    <span class="flex">
+                      More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-right ms-2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-10">
+            <div class="stats shadow">
+              <a href="./order.html">
+                <div class="stat w-64">
+                  <div class="stat-title">Manage</div>
+                  <div class="stat-value">Order</div>
+                  <div class="stat-desc mt-1">
+                    <span class="flex">
+                      More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-right ms-2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="stats shadow">
+              <a href="./invoice.html">
+                <div class="stat w-64">
+                  <div class="stat-title">Manage</div>
+                  <div class="stat-value">Invoice</div>
+                  <div class="stat-desc mt-1">
+                    <span class="flex">
+                      More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-right ms-2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Page content here -->
+      </div>
+      <div class="drawer-side">
+        <label for="my-drawer-3" class="drawer-overlay"></label>
+        <ul class="menu p-4 w-80 h-full bg-base-200">
+          <!-- Sidebar content here -->
+          <li><a href="./menu.html">Menu</a></li>
+          <li><a href="./table.html">Table</a></li>
+          <li><a href="./order.html">Order</a></li>
+          <li><a href="./invoice.html">Invoice</a></li>
+          <li>
+            <button
+              id="btnLogoutSide"
+              type="submit"
+              class="btn btn-sm btn-active btn-primary mt-5"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="./utils/index.js"></script>
+  </body>
+</html>
